@@ -16,6 +16,10 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  /* изменения в коде */  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1,
@@ -49,3 +53,75 @@ ol {
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #D9D9D9;
 }
+
+/* изменения в коде */
+
+.content {
+  display: flex;
+  width: 1140px;
+  height: 534px;
+  gap: 30px;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  
+}
+
+.search-form {
+  display: flex;
+  gap: 40px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+}
+
+/* .search-form__label {
+  display: inline-block;
+  width: 225px;
+}
+
+.search-form__checkbox-list {
+  display: inline-block;
+  width: 212px;
+}
+*/
+/* .button {
+  width: 194px;
+} */
+
+.content__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+  width: 100%;
+  height: 100%; 
+}
+
+.content__list-container {
+  /* height: 298px; */
+  overflow-y: scroll; 
+}
+
+
+
+.result {
+  width: 711px;
+  height: 456px;
+}
+
+ .content__video-card-thumbnail {
+  width: 399px;
+}
+
+.title {
+  margin: 0 140px 26px 0;
+}
+
+.result__video {
+  width: 711px;
+}
+
+/* .content__list-container custom-scrollbar {
+  height: 298px;
+} */
