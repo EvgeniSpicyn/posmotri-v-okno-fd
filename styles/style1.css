@@ -72,7 +72,7 @@ ol {
   gap: 40px;
   flex-direction: row;
   justify-content: space-between;
-  align-items: end;
+  align-items: start;
 }
 
 .search-form__label {
@@ -82,6 +82,15 @@ ol {
   width: fit-content;
   gap: 5px;
 }
+/*
+.search-form__checkbox-list {
+  display: inline-block;
+  width: 212px;
+}
+*/
+/* .button {
+  width: 194px;
+} */
 
 .content__details {
   display: flex;
@@ -93,6 +102,7 @@ ol {
 }
 
 .content__list-container {
+  /* height: 298px; */
   display: flex;
   flex-direction: column;
   overflow-y: scroll; 
@@ -133,7 +143,6 @@ ol {
 }
 
 .content__card-link {
-  display: block;
   color: white;
   text-decoration: none;
 }
@@ -145,6 +154,7 @@ ol {
 
 .result__video-container {
   width: 711px;
+  /* height: 386px; */
   margin: 0 0 16px;
 }
 
@@ -168,6 +178,10 @@ ol {
   font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 30px;
+  /* display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden; */
   white-space: nowrap; 
   overflow: hidden;
   text-overflow: ellipsis;
@@ -219,14 +233,10 @@ ol {
   color: rgb(255 255 255 / 0.7)
 }
 
-:focus-visible {
-  outline: none;
-}
-
-.search-form__label:has(:focus-visible) {
-  outline: 1px solid white;
-  outline-offset: 1px;
-} 
+/* .search-form__label:has(:focus-visible) {
+  /* outline: ; 
+  color:aqua;
+} */
 
 .search-form__pseudo-checkbox {
   width: 19px;
@@ -244,46 +254,7 @@ ol {
   opacity: 0;
 }
 
-.search-form__checkbox:checked+.search-form__pseudo-checkbox::after{
+.search-form__checkbox:checked + span{
   opacity: 1;
-}
-
-.search-form__checkbox-list > .search-form__label:hover {
-  text-decoration: underline;
-}
-
-.button {
-  background-color: transparent;
-  color: white;
-  min-height: 34px;
-  border: 1px solid white;
-  font-family: 'Fira Sans Condensed', sans-serif;
-  font-size: 18px;
-}
-
-.search-form__submit-button {
-  width: 194px;
-  align-self: flex-end;
-}
-
-.more-button {
-  width: 100%;
-  margin-bottom: 1px;
-}
-
-.button:hover {
-  text-decoration: underline;
-}
-
-.button:active {
-  background-color: #545050;
-}
-
-.button:focus {
-  outline: none;
-}
-
-.button:focus-visible {
-  outline:1px solid white;
-  outline-offset: -3px;
+  border: 2px solid red;
 }
