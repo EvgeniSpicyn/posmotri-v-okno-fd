@@ -80,6 +80,7 @@ ol {
   justify-content: center;
   width: fit-content;
   gap: 5px;
+  cursor: pointer;
 }
 
 .content__details {
@@ -276,9 +277,12 @@ ol {
   opacity: 1;
 }
 
-.search-form__checkbox-list > .search-form__label:hover {
+.search-form__label .search-form__label-text:hover {
   text-decoration: underline;
-  cursor: pointer;
+}
+
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
 }
 
 .button {
@@ -293,7 +297,6 @@ ol {
 }
 
 .search-form__submit-button {
-  width: 194px;
   align-self: flex-end;
 }
 
