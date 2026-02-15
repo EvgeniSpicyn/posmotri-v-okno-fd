@@ -59,25 +59,25 @@ ol {
 .content {
   display: flex;
   width: 1140px;
-  height: 534px;
   gap: 30px;
   flex-direction: row;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .search-form {
   display: flex;
-  gap: 40px;
+  gap: 35px;
   flex-direction: row;
   justify-content: space-between;
-  align-items: end;
+  align-items: flex-start;
 }
 
 .search-form__label {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: center;
   width: fit-content;
   gap: 5px;
 }
@@ -88,27 +88,32 @@ ol {
   justify-content: flex-start;
   align-items: start;
   width: 300px;
-  height: 100%;
+  height: 534px;
 }
 
 .content__list-container {
   display: flex;
   position: relative;
   flex-direction: column;
-  overflow-y: scroll;
+  overflow-y: auto;
   gap: 30px;
 }
 
 .content__list {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 24px;
 }
 
 .result {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
   width: 711px;
-  height: 456px;
-  margin-bottom: 10px;
+  overflow-y: hidden;
+  position: relative;
+  gap: 10px;
 }
 
 .content__video-card-thumbnail {
@@ -119,7 +124,7 @@ ol {
 }
 
 .title {
-  margin: 0 140px 21px 0;
+  margin: 0 140px 17px 0;
   font-family: Oswald, sans-serif;
   text-transform: uppercase;
 
@@ -139,16 +144,21 @@ ol {
 }
 
 .result__video-container {
+  width: 100%;
   position: relative;
-  width: 710px;
-  /* border: 1px solid white; */
-  margin: 6px 0 0;
 }
 
-.result__video {
+.result__video-container > .result__video {
   width: 100%;
+  height: 100%;
+  max-height: 386px;
   object-fit: cover;
 }
+
+/* .result__video {
+  width: 100%;
+  
+} */
 
 .content__video-card {
   display: flex;
@@ -163,12 +173,13 @@ ol {
 .search-form__fieldset-title {
   font-size: 18px;
   font-weight: 400;
-  /* margin-bottom: 1px; */
+  margin-bottom: 4px;
 }
 
 .content__video-card-title {
   font-family: Oswald, sans-serif;
   font-weight: 700;
+  font-size: 28px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -181,7 +192,7 @@ ol {
   line-height: 16.2px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: 4;
   overflow: hidden;
 }
 
@@ -197,26 +208,36 @@ ol {
 
 .search-form__checkbox-list {
   display: flex;
-  gap: 15px;
-  margin-top: 3px;
+  gap: 15px; /* 
+  margin-top: 4px; 
+  Отступ убран, так как при фокусе он отодвигает рамку. 
+  Отступ добавлен к заголовку. */
 }
 
 .search-form__fieldset {
-  border: none;
-  min-height: 54px;
+  border: none; /* 
+  min-height: 57px; 
+  высота заменена внутренним отступом*/
+  padding-bottom: 3px;
+  margin-left: 3px;
 }
 
 .search-form__textfield {
   background-color: inherit;
   width: 225px;
-  margin-top: 5px;
+  min-height: 27px;
   border-block-start: 1px solid white;
   border-block-end: 1px solid white;
   border-inline-start: none;
   border-inline-end: none;
   font-family: 'Fira Sans Condensed', sens-serif;
   font-size: 18px;
-  color: white;
+  /* color: white; 
+  Считается хорошей практикой использовать наследование цвета для элементов формы. 
+  При необходимости можно применять значения inherit или currentColor. Этот подход 
+  помогает создать согласованный дизайн, а также обеспечивает более единообразное 
+  использование цветов внутри формы.*/
+  color: currentColor;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -226,7 +247,7 @@ ol {
   color: rgb(255 255 255 / 0.7);
 }
 
-:focus-visible {
+.search-form__textfield:focus {
   outline: none;
 }
 
@@ -268,6 +289,7 @@ ol {
   border: 1px solid white;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
+  margin: 0 0 3px 5px;
 }
 
 .search-form__submit-button {
@@ -276,7 +298,7 @@ ol {
 }
 
 .more-button {
-  width: 100%;
+  width: 390px;
   margin-bottom: 1px;
 }
 
@@ -302,6 +324,10 @@ ol {
   background-color: #545050;
 }
 
+.content__card-link:active {
+  background-color: #545050;
+}
+
 .content__card-link:hover {
   text-decoration: underline;
 }
@@ -311,6 +337,8 @@ ol {
 }
 
 .content__list-item {
+  margin-top: 3px;
+  margin-bottom: 3px;
   padding: 0 3px;
 }
 
